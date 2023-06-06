@@ -108,4 +108,23 @@ Response:
 
 ## View Loan(s) - Customer Owned Loan
 
+GET - /loans
+
+Response:
+
+```json
+{
+    "loans": [
+        {
+            "id": "<generated id>",
+            "currency": "USD",
+            "amount": 10000,
+            "term": 3,
+            "submitted_at": "2022-02-07",
+            "state": "PENDING"
+        }
+    ]
+}
+```
+
 ## Submit Repayment
