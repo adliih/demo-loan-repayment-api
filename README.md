@@ -83,6 +83,29 @@ Response:
 
 ## Approve The Load - Admin Only
 
+POST - /loan/{loanId}/approve
+
+Request:
+
+```json
+
+```
+
+Response:
+
+```json
+{
+    "loan": {
+        "id": "<generated id>",
+        "currency": "USD",
+        "amount": 10000,
+        "term": 3,
+        "submitted_at": "2022-02-07",
+        "state": "APPROVED"
+    }
+}
+```
+
 ## View Loan(s) - Customer Owned Loan
 
 ## Submit Repayment
