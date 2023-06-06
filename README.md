@@ -57,20 +57,23 @@ Response:
         "term": 3,
         "submitted_at": "2022-02-07",
         "state": "PENDING",
-        "repayments": [
+        "scheduled_repayments": [
             {
+                "id": "<generated id>",
                 "due_at": "2022-02-14",
                 "currency": "USD",
                 "amount": 3333.33,
                 "state": "PENDING"
             },
             {
+                "id": "<generated id>",
                 "due_at": "2022-02-21",
                 "currency": "USD",
                 "amount": 3333.33,
                 "state": "PENDING"
             },
             {
+                "id": "<generated id>",
                 "due_at": "2022-02-21",
                 "currency": "USD",
                 "amount": 3333.34,
@@ -129,25 +132,30 @@ Response:
 
 ## Submit Repayment
 
-POST - /loans/{loanId}/repayments/{repaymentsId}/payments
+POST - /loans/{loanId}/repayments
 
 Request:
 
 ```json
 {
-    "payment": {
+    "repayment": {
         "currency": "USD",
-        "amount": 10000
+        "amount": 10000,
+        "scheduled_repayment_id": "<scheduled_repayment_id>"
     }
 }
 ```
 
 ```json
 {
-    "payment": {
+    "repayment": {
         "id": "<generated_id>",
-        "repayment": {
-            "id": "{repaymentsId}",
+        "loan": {
+            "id": "{loanId}",
+            "status": "APPROVED"
+        },
+        "scheduled_repayment": {
+            "id": "<scheduled_repayment_id>",
             "status": "PAID"
         },
         "currency": "USD",
