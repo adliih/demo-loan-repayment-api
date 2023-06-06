@@ -31,7 +31,7 @@ Run migration
 
 ## Submit Loan
 
-POST - /loan
+POST - /loans
 
 Request:
 
@@ -83,7 +83,7 @@ Response:
 
 ## Approve The Load - Admin Only
 
-POST - /loan/{loanId}/approve
+POST - /loans/{loanId}/approve
 
 Request:
 
