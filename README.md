@@ -128,3 +128,30 @@ Response:
 ```
 
 ## Submit Repayment
+
+POST - /loans/{loanId}/repayments/{repaymentsId}/payments
+
+Request:
+
+```json
+{
+    "payment": {
+        "currency": "USD",
+        "amount": 10000
+    }
+}
+```
+
+```json
+{
+    "payment": {
+        "id": "<generated_id>",
+        "repayment": {
+            "id": "{repaymentsId}",
+            "status": "PAID"
+        },
+        "currency": "USD",
+        "amount": 10000
+    }
+}
+```
