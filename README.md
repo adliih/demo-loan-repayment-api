@@ -29,7 +29,57 @@ Run migration
 
 # API(s)
 
-## Submit Load
+## Submit Loan
+
+POST - /loan
+
+Request:
+
+```json
+{
+    "loan": {
+        "currency": "USD",
+        "amount": 10000,
+        "term": 3,
+        "submitted_at": "2022-02-07"
+    }
+}
+```
+
+Response:
+
+```json
+{
+    "loan": {
+        "id": "<generated id>",
+        "currency": "USD",
+        "amount": 10000,
+        "term": 3,
+        "submitted_at": "2022-02-07",
+        "state": "PENDING",
+        "repayments": [
+            {
+                "due_at": "2022-02-14",
+                "currency": "USD",
+                "amount": 3333.33,
+                "state": "PENDING"
+            },
+            {
+                "due_at": "2022-02-21",
+                "currency": "USD",
+                "amount": 3333.33,
+                "state": "PENDING"
+            },
+            {
+                "due_at": "2022-02-21",
+                "currency": "USD",
+                "amount": 3333.34,
+                "state": "PENDING"
+            }
+        ]
+    }
+}
+```
 
 ## Approve The Load - Admin Only
 
