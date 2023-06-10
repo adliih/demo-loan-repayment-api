@@ -31,6 +31,18 @@ Run migration
 
 Base API URL: `https://localhost/api`
 
+All API Endpoint except register and login require Authorization header.
+
+```
+Authorization: Bearer <access token from register/login api>
+```
+
+example:
+
+```
+Authorization: Bearer 7|amWM2mZXDwEmfYTiUb5XUXuIgzFtDhJGDvxDWnUp
+```
+
 ## Register
 
 POST - /auth/register
