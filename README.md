@@ -29,6 +29,52 @@ Run migration
 
 # API(s)
 
+Base API URL: `https://localhost/api`
+
+## Register
+
+POST - /auth/register
+Request (Admin Role):
+
+```json
+{
+    "name": "Admin Hugh Baumbach",
+    "email": "admin@fakemail.com",
+    "password": "password",
+    "password_confirmation": "password",
+    "role": "admin"
+}
+```
+
+Request (Customer Role):
+
+```json
+{
+    "name": "Customer Percy Swaniawski",
+    "email": "customer@fakemail.com",
+    "password": "password",
+    "password_confirmation": "password",
+    "role": "customer"
+}
+```
+
+Response:
+
+```json
+{
+    "message": "Registration successful",
+    "user": {
+        "name": "Customer Percy Swaniawski",
+        "email": "customer@fakemail.com",
+        "role": "customer",
+        "updated_at": "2023-06-10T20:16:11.000000Z",
+        "created_at": "2023-06-10T20:16:11.000000Z",
+        "id": 1
+    },
+    "access_token": "1|uzt4irBhqvZb1jYMG1LHPOvCHtnQDyZNV3DJL0iI"
+}
+```
+
 ## Submit Loan
 
 POST - /loans
